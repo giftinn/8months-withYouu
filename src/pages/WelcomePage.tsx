@@ -30,7 +30,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
             textShadow: '0 4px 20px rgba(30, 64, 175, 0.35)'
           }}
         >
-          Helloo
+          Hi my Love
         </motion.h1>
         
         <motion.div
@@ -39,7 +39,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           transition={{ delay: 0.5 }}
         >
           <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-blue-900 font-medium">
-            Happy Valentine's Day!
+            I made this special for you
           </p>
         </motion.div>
       </motion.div>
@@ -55,7 +55,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          I made this special for you. Play a little game to unlock your surprises
+          Play a little game to unlock your surprises
         </motion.p>
 
         <motion.div
@@ -112,3 +112,4 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onNext }) => {
 };
 
 export default WelcomePage;
+
