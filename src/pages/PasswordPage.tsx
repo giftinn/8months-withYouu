@@ -10,7 +10,7 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const correctPassword = '020226';
+  const correctPassword = '09022026';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,16 +41,19 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
 
   return (
     <div className="text-center space-y-6 sm:space-y-8 px-4">
+
       <div className="space-y-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text leading-relaxed">
           You know what the password is???
         </h2>
-        <p className="text-base sm:text-lg md:text-xl text-blue-600 font-medium">
+
+        <p className="text-base sm:text-lg md:text-xl text-blue-800 font-medium">
           Hint; Tanggal jadian kita!
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
+
         <motion.div
           animate={showError ? { x: [-10, 10, -10, 10, 0] } : {}}
           transition={{ duration: 0.5 }}
@@ -61,14 +64,14 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
             onChange={handleInputChange}
             placeholder="DDMMYY"
             maxLength={8}
-            className="w-full px-4 sm:px-6 py-3 sm:py-4 text-center text-lg sm:text-xl font-semibold border-2 border-blue-300 rounded-xl sm:rounded-2xl focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-200 transition-all duration-300 bg-blue-50/90 backdrop-blur-sm shadow-lg hover:shadow-xl"
+            className="w-full px-4 sm:px-6 py-3 sm:py-4 text-center text-lg sm:text-xl font-semibold border-2 border-blue-500 rounded-xl sm:rounded-2xl focus:outline-none focus:border-blue-700 focus:ring-4 focus:ring-blue-400/40 transition-all duration-300 bg-blue-900/10 backdrop-blur-sm shadow-lg hover:shadow-xl"
             style={{ fontFamily: 'monospace', letterSpacing: '0.15em' }}
           />
         </motion.div>
 
         <motion.button
           type="submit"
-          className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 via-sky-500 to-indigo-500 text-white text-lg font-bold rounded-2xl shadow-2xl hover:shadow-blue-300/50 transition-all duration-300 overflow-hidden relative group"
+          className="w-full px-8 py-4 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-800 text-white text-lg font-bold rounded-2xl shadow-2xl hover:shadow-blue-900/40 transition-all duration-300 overflow-hidden relative group"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           style={{ backgroundSize: '200% auto' }}
@@ -78,8 +81,10 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
             animate={{ x: ['-100%', '200%'] }}
             transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
           />
+
           <span className="relative z-10">Submit</span>
         </motion.button>
+
       </form>
 
       <AnimatePresence>
@@ -88,7 +93,7 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="text-blue-600 font-semibold text-lg"
+            className="text-blue-700 font-semibold text-lg"
           >
             You don't know what the password is!
           </motion.div>
@@ -106,11 +111,14 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 0.5 }}
-              className="text-2xl"
+              className="text-2xl flex justify-center"
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-sky-400 rounded-full" />
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-700 to-blue-500 rounded-full" />
             </motion.div>
-            <div className="text-blue-700 font-semibold">Perfect! You know!!</div>
+
+            <div className="text-blue-900 font-semibold">
+              Perfect! You know!!
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -124,7 +132,7 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
       >
         <motion.button
           onClick={onNext}
-          className="text-sm text-blue-500 hover:text-blue-700 underline transition-colors duration-200"
+          className="text-sm text-blue-600 hover:text-blue-800 underline transition-colors duration-200"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -137,7 +145,7 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
         {[0, 1, 2, 3].map((index) => (
           <motion.div
             key={index}
-            className="opacity-60"
+            className="opacity-70"
             animate={{
               rotate: [0, 15, -15, 0],
               scale: [1, 1.1, 1]
@@ -148,13 +156,14 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
               delay: index * 0.3
             }}
           >
-            {index === 0 && <div className="w-4 h-4 bg-blue-400 rounded-full" />}
-            {index === 1 && <div className="w-3 h-3 bg-sky-400 rounded-sm rotate-45" />}
-            {index === 2 && <div className="w-4 h-4 border-2 border-blue-400 rounded-full" />}
-            {index === 3 && <div className="w-3 h-3 bg-gradient-to-br from-blue-400 to-sky-400 rounded-lg" />}
+            {index === 0 && <div className="w-4 h-4 bg-blue-600 rounded-full" />}
+            {index === 1 && <div className="w-3 h-3 bg-blue-500 rounded-sm rotate-45" />}
+            {index === 2 && <div className="w-4 h-4 border-2 border-blue-600 rounded-full" />}
+            {index === 3 && <div className="w-3 h-3 bg-gradient-to-br from-blue-700 to-blue-500 rounded-lg" />}
           </motion.div>
         ))}
       </div>
+
     </div>
   );
 };
