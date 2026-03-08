@@ -16,7 +16,7 @@
 
 @layer components {
   .heart-glow {
-    filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.5));
+    filter: drop-shadow(0 0 10px rgba(29, 78, 216, 0.5));
   }
   
   .sparkle-animation {
@@ -50,7 +50,7 @@
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 
-      0 8px 32px rgba(37, 99, 235, 0.1),
+      0 8px 32px rgba(29, 78, 216, 0.12),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
   }
 
@@ -62,14 +62,14 @@
     background: rgba(255, 255, 255, 0.35);
     border-color: rgba(255, 255, 255, 0.5);
     box-shadow: 
-      0 12px 48px rgba(37, 99, 235, 0.2),
+      0 12px 48px rgba(29, 78, 216, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.8);
     transform: translateY(-4px);
   }
 
   /* Gradient text effect */
   .gradient-text {
-    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #7dd3fc 100%);
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #60a5fa 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -99,10 +99,10 @@
 
   @keyframes pulseGlow {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 0 20px rgba(29, 78, 216, 0.35);
     }
     50% {
-      box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+      box-shadow: 0 0 40px rgba(29, 78, 216, 0.65);
     }
   }
 
@@ -136,11 +136,11 @@
   /* Smooth gradient background */
   .gradient-bg {
     background: linear-gradient(135deg, 
-      #eff6ff 0%, 
-      #dbeafe 25%,
-      #bfdbfe 50%,
-      #dbeafe 75%,
-      #eff6ff 100%
+      #e0ecff 0%, 
+      #c7dbff 25%,
+      #a9c8ff 50%,
+      #c7dbff 75%,
+      #e0ecff 100%
     );
     background-size: 400% 400%;
     animation: gradientFlow 15s ease infinite;
@@ -155,18 +155,18 @@
   .card-depth-1 {
     box-shadow: 
       0 1px 3px rgba(0, 0, 0, 0.05),
-      0 10px 15px -5px rgba(37, 99, 235, 0.1);
+      0 10px 15px -5px rgba(29, 78, 216, 0.12);
   }
 
   .card-depth-2 {
     box-shadow: 
       0 4px 6px rgba(0, 0, 0, 0.05),
-      0 15px 25px -5px rgba(37, 99, 235, 0.15);
+      0 15px 25px -5px rgba(29, 78, 216, 0.18);
   }
 
   .card-depth-3 {
     box-shadow: 
       0 10px 15px rgba(0, 0, 0, 0.05),
-      0 20px 40px -10px rgba(37, 99, 235, 0.2);
+      0 20px 40px -10px rgba(29, 78, 216, 0.25);
   }
 }
