@@ -48,7 +48,7 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
         </h2>
 
         <p className="text-base sm:text-lg md:text-xl text-blue-800 font-medium">
-          Hint; Tanggal jadian kita!
+          Hint; Our special date
         </p>
       </div>
 
@@ -169,3 +169,4 @@ const PasswordPage: React.FC<PasswordPageProps> = ({ onNext }) => {
 };
 
 export default PasswordPage;
+
