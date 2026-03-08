@@ -14,52 +14,57 @@ interface Reason {
 }
 
 const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
+
   const [reasons, setReasons] = useState<Reason[]>([
     {
       id: 1,
-      title: 'Your laugh',
-      text: 'I am happy when I see you laugh',
+      title: 'Your Messages ',
+      text: 'the way you text me always makes my day better. even the simplest message from you can make me smile.',
       isRevealed: false
     },
     {
       id: 2,
-      title: 'Your eyes light up when you are excited',
-      text: 'I love you because you are always excited about everything',
+      title: 'Your Tenderness',
+      text: 'the way you care for me feels like comfort, like a place where my heart can always rest.',
       isRevealed: false
     },
     {
       id: 3,
-      title: 'You make ordinary moments special',
-      text: 'I am lucky to have you because you always make our stories special',
+      title: 'Your Humor',
+      text: 'you always know how to make me laugh, even when i'm not in the best mood.',
       isRevealed: false
     },
     {
       id: 4,
-      title: 'Your kindness',
-      text: 'You are so kind, you forgive me a lot and still love me',
+      title: 'Your Heart',
+      text: 'your love means so much to me. being with you makes my life feel more complete.',
       isRevealed: false
     },
     {
       id: 5,
-      title: 'You believe in me',
-      text: 'I\'m happy with you because you always trust me',
+      title: 'Your Care',
+      text: 'the way you care about me makes me feel safe and loved every single day.',
       isRevealed: false
     },
     {
       id: 6,
-      title: 'You comfort me when I am sad ',
-      text: 'You always make me want to come home to you because you are the most comfortable place for me',
+      title: 'Our little world',
+      text: 'i love the tiny universe we’ve built in our chats, and i can’t wait for everything we’ll create next.',
       isRevealed: false
     }
   ]);
 
   const handleHeartClick = (id: number) => {
+
     if (reasons.find(r => r.id === id)?.isRevealed) return;
 
     soundEffects.ding();
-    setReasons(prev => 
-      prev.map(reason => 
-        reason.id === id ? { ...reason, isRevealed: true } : reason
+
+    setReasons(prev =>
+      prev.map(reason =>
+        reason.id === id
+          ? { ...reason, isRevealed: true }
+          : reason
       )
     );
   };
@@ -67,34 +72,42 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
   const allRevealed = reasons.every(r => r.isRevealed);
 
   return (
+
     <div className="text-center space-y-4 sm:space-y-6 px-4">
+
       <div className="space-y-4">
+
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text leading-relaxed">
           Reasons Why I Love You
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-blue-600 font-medium">
+        <p className="text-base sm:text-lg md:text-xl text-blue-800 font-medium">
           Tap each heart to reveal one reason.
         </p>
+
       </div>
 
       <div className="space-y-3 max-w-md mx-auto">
+
         {reasons.map((reason, index) => (
+
           <motion.div
             key={reason.id}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
           >
+
             <motion.div
               className={`p-4 sm:p-5 rounded-xl sm:rounded-2xl border-2 transition-all duration-500 cursor-pointer ${
                 reason.isRevealed
-                  ? 'bg-gradient-to-r from-blue-100 to-sky-100 border-blue-300 shadow-lg card-depth-2'
-                  : 'bg-white/80 border-blue-200 hover:border-blue-400 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-white/90'
+                  ? 'bg-blue-900/10 border-blue-600 shadow-lg'
+                  : 'bg-blue-900/5 border-blue-500 hover:border-blue-700 backdrop-blur-sm shadow-md hover:shadow-xl'
               }`}
               whileHover={!reason.isRevealed ? { scale: 1.03, y: -2 } : {}}
               onClick={() => !reason.isRevealed && handleHeartClick(reason.id)}
             >
+
               <div className="flex items-center space-x-3">
 
                 <motion.div
@@ -107,28 +120,33 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
                   } : {}}
                   transition={{ duration: 0.6 }}
                 >
+
                   <svg
                     className="w-5 h-5 sm:w-6 sm:h-6"
                     viewBox="0 0 24 24"
-                    fill={reason.isRevealed ? "#3b82f6" : "none"}
-                    stroke="#3b82f6"
+                    fill={reason.isRevealed ? "#1d4ed8" : "none"}
+                    stroke="#1d4ed8"
                     strokeWidth="2"
                   >
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                   </svg>
+
                 </motion.div>
-                
+
                 <div className="flex-1 text-left">
+
                   <motion.h3
-                    className="text-sm sm:text-base font-semibold text-blue-800"
+                    className="text-sm sm:text-base font-semibold text-blue-900"
                     animate={reason.isRevealed ? { opacity: [0, 1] } : {}}
                     transition={{ delay: 0.2 }}
                   >
                     {reason.title}
                   </motion.h3>
-                  
+
                   <AnimatePresence>
+
                     {reason.isRevealed && (
+
                       <motion.p
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
@@ -138,36 +156,49 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
                       >
                         {reason.text}
                       </motion.p>
+
                     )}
+
                   </AnimatePresence>
+
                 </div>
 
               </div>
+
             </motion.div>
+
           </motion.div>
+
         ))}
+
       </div>
 
       {!allRevealed && (
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
           className="mt-6"
         >
+
           <motion.button
             onClick={onNext}
-            className="text-sm text-blue-500 hover:text-blue-700 underline transition-colors duration-200"
+            className="text-sm text-blue-700 hover:text-blue-900 underline transition-colors duration-200"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Skip →
           </motion.button>
+
         </motion.div>
+
       )}
 
       <AnimatePresence>
+
         {allRevealed && (
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -175,41 +206,46 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
             transition={{ type: 'spring', duration: 0.6 }}
             className="pt-4"
           >
+
             <motion.div
-              animate={{ 
+              animate={{
                 scale: [1, 1.05, 1],
                 boxShadow: [
-                  '0 0 20px rgba(59,130,246,0.3)',
-                  '0 0 40px rgba(59,130,246,0.5)',
-                  '0 0 20px rgba(59,130,246,0.3)'
+                  '0 0 20px rgba(30,64,175,0.3)',
+                  '0 0 40px rgba(30,64,175,0.5)',
+                  '0 0 20px rgba(30,64,175,0.3)'
                 ]
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
+
               <motion.button
                 onClick={onNext}
-                className="px-8 py-4 bg-gradient-to-r from-blue-400 to-indigo-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
+                className="px-8 py-4 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-800 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Open Your Letter
               </motion.button>
+
             </motion.div>
-            
+
             <motion.div
-              className="mt-4 text-blue-500 text-sm"
+              className="mt-4 text-blue-700 text-sm"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               One final surprise awaits...
             </motion.div>
+
           </motion.div>
+
         )}
+
       </AnimatePresence>
+
     </div>
   );
 };
 
 export default ReasonsPage;
-
-
