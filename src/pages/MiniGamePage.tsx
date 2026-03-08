@@ -112,16 +112,16 @@ const MiniGamePage: React.FC<MiniGamePageProps> = ({ onNext }) => {
           Let's play a little game before your surprise
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl text-blue-600 font-medium">
+        <p className="text-base sm:text-lg md:text-xl text-blue-700 font-medium">
           Tap two cards to find the matching pairs!
         </p>
 
         <motion.div
-          className="inline-block px-6 py-2 bg-gradient-to-r from-blue-100 to-sky-100 rounded-full border border-blue-200 shadow-sm"
+          className="inline-block px-6 py-2 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-full border border-blue-300 shadow-sm"
           animate={{ scale: moves > 0 ? [1, 1.05, 1] : 1 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="text-base font-semibold text-blue-700">
+          <p className="text-base font-semibold text-blue-900">
             Moves: {moves}
           </p>
         </motion.div>
@@ -136,7 +136,7 @@ const MiniGamePage: React.FC<MiniGamePageProps> = ({ onNext }) => {
               initial={{ scale: 0, rotate: -180 }}
               animate={{ 
                 scale: 1, 
-                rotate: card.isFlipped || card.isMatched ? 0 : 0,
+                rotate: 0,
                 opacity: card.isMatched ? 0.7 : 1
               }}
               exit={{ scale: 0, rotate: 180 }}
@@ -151,9 +151,9 @@ const MiniGamePage: React.FC<MiniGamePageProps> = ({ onNext }) => {
               onClick={() => handleCardClick(card.id)}
               className={`aspect-square flex items-center justify-center text-2xl sm:text-3xl rounded-xl sm:rounded-2xl cursor-pointer transition-all duration-300 ${
                 card.isFlipped || card.isMatched
-                  ? 'bg-gradient-to-br from-blue-400 to-indigo-500 text-white shadow-xl card-depth-2'
-                  : 'bg-gradient-to-br from-white/80 to-blue-50 hover:from-blue-100 hover:to-blue-200 shadow-md hover:shadow-lg backdrop-blur-sm border border-blue-100'
-              } ${card.isMatched ? 'ring-2 ring-blue-300 ring-opacity-70 pulse-glow' : ''}`}
+                  ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-xl card-depth-2'
+                  : 'bg-gradient-to-br from-white/80 to-blue-100 hover:from-blue-200 hover:to-blue-300 shadow-md hover:shadow-lg backdrop-blur-sm border border-blue-200'
+              } ${card.isMatched ? 'ring-2 ring-blue-500 ring-opacity-70 pulse-glow' : ''}`}
             >
               <motion.div
                 animate={{ 
@@ -178,7 +178,7 @@ const MiniGamePage: React.FC<MiniGamePageProps> = ({ onNext }) => {
         >
           <motion.button
             onClick={onNext}
-            className="text-sm text-blue-500 hover:text-blue-700 underline transition-colors duration-200"
+            className="text-sm text-blue-700 hover:text-blue-900 underline transition-colors duration-200"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -198,14 +198,14 @@ const MiniGamePage: React.FC<MiniGamePageProps> = ({ onNext }) => {
             <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 0.5, repeat: 2 }}
-              className="text-2xl font-bold text-blue-800"
+              className="text-2xl font-bold text-blue-900"
             >
               Yay! You found all the pairs
             </motion.div>
             
             <motion.button
               onClick={onNext}
-              className="px-6 py-3 bg-gradient-to-r from-blue-400 to-indigo-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+              className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
