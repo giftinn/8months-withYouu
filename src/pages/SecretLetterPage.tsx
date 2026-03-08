@@ -16,7 +16,7 @@ Thank you for everything you've given and done for me, for us, for our relations
 
 I don’t know what the future’s gonna look like, but i really hope you’ll still be here with me, through my bad days, my good days, and every moment that’s waiting for me out there. I want you to be part of all the important things in my life.
 
-Thank you for everything, kakak sayang. i loveeee you so much! Happy 8st mensiversary, cheers to more good days and good things for us.`;
+Thank you for everything, kakak sayang. i loveeee you so much! Happy 8th mensiversary, cheers to more good days and good things for us.`;
 
   useEffect(() => {
     let currentIndex = 0;
@@ -134,3 +134,4 @@ Thank you for everything, kakak sayang. i loveeee you so much! Happy 8st mensive
 };
 
 export default SecretLetterPage;
+
