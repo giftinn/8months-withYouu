@@ -31,7 +31,7 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
     {
       id: 3,
       title: 'Your Humor',
-      text: 'you always know how to make me laugh, even when i'm not in the best mood.',
+      text: 'you always know how to make me laugh, even when i’m not in the best mood.',
       isRevealed: false
     },
     {
@@ -249,3 +249,4 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
 };
 
 export default ReasonsPage;
+
