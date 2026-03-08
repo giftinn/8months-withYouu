@@ -23,7 +23,7 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
     },
     {
       id: 2,
-      title: 'Your eyes light up when you're excited',
+      title: 'Your eyes light up when you are excited',
       text: 'I love you because you are always excited about everything',
       isRevealed: false
     },
@@ -42,7 +42,7 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
     {
       id: 5,
       title: 'You believe in me',
-      text: 'I'm happy with you because you always trust me',
+      text: 'I\'m happy with you because you always trust me',
       isRevealed: false
     },
     {
@@ -211,4 +211,5 @@ const ReasonsPage: React.FC<ReasonsPageProps> = ({ onNext }) => {
 };
 
 export default ReasonsPage;
+
 
